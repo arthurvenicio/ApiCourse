@@ -49,15 +49,14 @@ namespace ApiCourse.Controllers
         {
 
             if (uuid != order.Uuid)
-                return BadRequest();
+               return BadRequest();
 
             var existingOrder = OrderService.GetOrder(uuid);
             if (existingOrder is null)
                 return NotFound();
 
             OrderService.Update(order);
-
-            return NoContent();
+            return Ok(order);
         }
 
         [HttpDelete("delete/{uuid}")]

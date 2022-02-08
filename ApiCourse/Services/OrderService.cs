@@ -1,4 +1,5 @@
 ﻿using ApiCourse.Models;
+
 namespace ApiCourse.Services
 {
     public class OrderService
@@ -44,7 +45,7 @@ namespace ApiCourse.Services
 
         public static void Update(Order order)
         {
-            var index = Orders.FindIndex(o => o.Uuid == order.Uuid);
+            var index = Orders.FindIndex(i => i.Uuid == order.Uuid);
             if (index == -1)
                 return;
 
